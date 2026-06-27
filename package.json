@@ -1,0 +1,33 @@
+{
+  "name": "modao-prototype-mcp",
+  "version": "0.1.0",
+  "description": "MCP server that exports Modao read-only prototypes into a catalog and screenshots.",
+  "type": "module",
+  "bin": {
+    "modao-prototype-mcp": "dist/index.js",
+    "modao-prototype-mcp-http": "dist/http-server.js",
+    "modao-prototype-mcp-export": "dist/cli.js",
+    "modao-prototype-mcp-update": "dist/update-cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "test:red": "node --test test/*.test.mjs",
+    "start": "node dist/index.js",
+    "start:http": "node dist/http-server.js",
+    "export": "node dist/cli.js",
+    "update": "node dist/update-cli.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.13.0",
+    "playwright": "^1.53.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "typescript": "^5.8.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
